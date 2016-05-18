@@ -6,7 +6,7 @@
  *       1. Knowledge Base
  *       2. Inference Engine 
  *           a. Implements a form of unification 
- *               i. Optional: variables
+ *               i. Optional: variables 
  *       3. Rule Base
  *           a. Cannot be hardcoded if-then-logic
  *           b. Classes for how to store rules
