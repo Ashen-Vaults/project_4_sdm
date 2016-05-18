@@ -4,13 +4,17 @@
  * Requirements Checklist
  *  Rule Based System
  *       1. Knowledge Base
+ *       2. 
+
+
  *       2. Inference Engine 
  *           a. Implements a form of unification 
  *               i. Optional: variables 
+ *           b. Provenance info to verify it is still valid
+ *
  *       3. Rule Base
  *           a. Cannot be hardcoded if-then-logic
  *           b. Classes for how to store rules
- *           c.  
  */
 package ai.abstraction;
 
