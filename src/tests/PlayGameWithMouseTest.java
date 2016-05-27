@@ -6,6 +6,9 @@ package tests;
 
 import ai.core.AI;
 import ai.*;
+import ai.abstraction.LightRush;
+import ai.abstraction.RuleBasedAI;
+import ai.abstraction.pathfinding.AStarPathFinding;
 import ai.core.ContinuingAI;
 import ai.evaluation.SimpleEvaluationFunction;
 import ai.mcts.naivemcts.NaiveMCTS;
@@ -36,11 +39,11 @@ public class PlayGameWithMouseTest {
         PhysicalGameStateMouseJFrame w = new PhysicalGameStateMouseJFrame("Game State Visuakizer (Mouse)",640,640,pgsp);
 //        PhysicalGameStateMouseJFrame w = new PhysicalGameStateMouseJFrame("Game State Visuakizer (Mouse)",400,400,pgsp);
 
-        AI ai1 = new MouseController(w);
+        AI ai1 = new RuleBasedAI(utt, new AStarPathFinding());//new MouseController(w);
 //        AI ai2 = new PassiveAI();
-//        AI ai2 = new RandomBiasedAI();
-//        AI ai2 = new LightRush(utt, new AStarPathFinding());
-        AI ai2 = new ContinuingAI(new NaiveMCTS(PERIOD, -1, 100, 20, 0.33f, 0.0f, 0.75f, new RandomBiasedAI(), new SimpleEvaluationFunction()));
+        AI ai2 = new RandomBiasedAI();
+//        AI ai2 = new RuleBasedAI(utt, new AStarPathFinding());
+       // AI ai2 = new ContinuingAI(new NaiveMCTS(PERIOD, -1, 100, 20, 0.33f, 0.0f, 0.75f, new RandomBiasedAI(), new SimpleEvaluationFunction()));
 
         long nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
         do{

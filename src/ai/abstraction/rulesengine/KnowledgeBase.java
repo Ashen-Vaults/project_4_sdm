@@ -1,25 +1,34 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The database containing knowledge available to
+ * the AI
  */
 package ai.abstraction.rulesengine;
 
 import java.util.ArrayList;
 
 /**
- *
+ * The perception module will fill
+ * the knowledge base each update cycle
  * @author Alexsh
  */
 public class KnowledgeBase {
-    ArrayList<Term> facts;
+    ArrayList<Term> _facts;
     
-    void addTerm(Term _t){
-        facts.add(_t);
+    
+    public KnowledgeBase(){
+        _facts = new ArrayList<>();
     }
     
-    void clear(){
-        facts.clear();
+    public ArrayList<Term> getFacts(){
+        return _facts;
+    }
+    
+    public void addTerm(Term _t){
+        _facts.add(_t);
+    }
+    
+    public void clear(){
+        _facts.clear();
     }
     
 }

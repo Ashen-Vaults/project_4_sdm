@@ -1,0 +1,34 @@
+If fighter(X,self) & state(X,idle) & then sendToAttack(X) 
+If fighter(X,enemy) & attacking(X,Y) & unit(Y,self) then setAttackPriority(X) 
+If peasant(X,self) & state(X,idle) & goldmine(Y) & resources(Y,Z) & Z>0 then harvest(X,Y) 
+If nextBuild(X) & cost(X,Y) & resources(Z,self ) & Z>= Y then build(X) 
+If not(peasant(X,self)) then add(nextBuild(peasant)) If not(barracks(X,self)) then add(nextBuild(barracks)) 
+If barracks(X,self) & resources(Y,self) & cost(Z,fighter) & Y>Z  then add(nextBuild(fighter)) 
+
+
+
+##
+
+1) Breakdown
+
+Rule:
+    Pattern:
+        Term1 = fighter(X,self)
+        Term2 = state(X, idle)
+        
+    Action:
+        Term3 = sendToAttack(X)
+
+
+KnowledgeBase: -> updated via the perception
+    Facts:
+        fighter(Charlie, self)
+        state(Alice, defending)
+        state(Charlie, idle)
+
+Result:
+    Term3 = Term1 U Term2; x = Charlie
+    
+    Unit to effect = Charlie
+
+    SendToAttack(Charlie)

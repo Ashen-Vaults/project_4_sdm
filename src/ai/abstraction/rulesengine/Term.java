@@ -10,10 +10,20 @@ import java.util.ArrayList;
 /**
  * Knoweledge base implementaion
  * A representation of a logical term
+ * 
+ * Example: 
+ *      fighter(X,self)
+ *          
+ *          functor = fighter
+ *          arguments = x, self
+ *              x.unboundVariable = true
+ *              self.unboundVariable = false;
+ * 
+ * 
  * @author Alexsh
  */
 public class Term {
-    String functor;
+    String functor; //Head of the 
     TermParameter[] arguments;
     
     public Term(String _f, TermParameter... _args){
